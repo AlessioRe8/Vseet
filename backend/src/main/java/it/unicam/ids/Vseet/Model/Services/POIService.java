@@ -110,7 +110,7 @@ public class POIService {
 
     @Transactional
     public void deleteById(Long id) throws ContentNotFoundException {
-        List<Itinerary> its = itineraryRepository.findByPoints_ID(id); //TODO Problema del delete se il poi è in un itinerary
+        List<Itinerary> its = itineraryRepository.findByPoints_ID(id);
 
     for (Itinerary it : its) {
         it.getPoints().removeIf(p -> p.getID().equals(id));
