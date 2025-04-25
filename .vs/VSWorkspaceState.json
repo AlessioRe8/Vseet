@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\frontend",
+    "\\frontend\\public",
+    "\\frontend\\src",
+    "\\frontend\\src\\app",
+    "\\frontend\\src\\app\\services",
+    "\\frontend\\src\\app\\services\\content"
+  ],
+  "SelectedNode": "\\frontend\\src\\main.ts",
+  "PreviewInSolutionExplorer": false
+}
