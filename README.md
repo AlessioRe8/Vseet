@@ -1,5 +1,5 @@
 # V-seet App
-V-seet is an application that focuses on creating an interactive environment
+V-seet is an Single Page Application that focuses on creating an interactive environment
 between users that want to discover unknown territories.
 It comprehends a system that allows users to load Point of Interests in a database (JPA).
 These point of interests are classified as verified or not wether an authorized user verify the authenticity. Point of interests may be grouped into Itineraries, and loaded in the system as "Contents".
