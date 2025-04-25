@@ -1,0 +1,71 @@
+.contributions-container {
+    padding: 2rem;
+  }
+  
+  .cards-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  
+
+  .card {
+    position: relative;          
+    flex: 0 1 300px;             
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    cursor: pointer;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  
+  
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+  }
+
+  .edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .edit-button:hover {
+    background-color: #45a049;
+  }
+
+  .delete-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    color: red;
+    font-size: 1.2rem;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .delete-btn:hover {
+    color: darkred;
+  }

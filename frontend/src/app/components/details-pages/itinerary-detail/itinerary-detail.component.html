@@ -1,0 +1,28 @@
+   <div class="detail-card" *ngIf="itinerary">
+    <div class="detail-header">
+      <h2>{{ itinerary.name }}</h2>
+      <i *ngIf="itinerary.verified" class="fas fa-check-circle badge-verified" title="Verificato"></i>
+    </div>
+  
+    <div class="detail-body">
+      <div class="detail-row">
+        <span class="label">Descrizione</span>
+        <span class="value">{{ itinerary.description }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Categoria</span>
+        <span class="value">{{ itinerary.contentCategory }}</span>
+      </div>
+  
+      <h3 class="subheader">Punti dell'itinerario</h3>
+      <ul class="points-list">
+        <li *ngFor="let poi of itinerary.points" class="point-item" (click)="goToDetail(poi)">
+          <i class="fas fa-map-marker-alt"></i>
+          <div class="point-info">
+            <strong>{{ poi.name }}</strong><br/>
+            <small>{{ poi.description }}</small>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>

@@ -1,0 +1,95 @@
+  .detail-card {
+    max-width: 700px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    padding: 2rem;
+    font-family: 'Segoe UI', sans-serif;
+  }
+  
+  .detail-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .detail-header h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #333;
+  }
+  
+  .badge-verified {
+    color: #4caf50;
+    font-size: 1.5rem;
+  }
+  
+  .detail-body .detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+  
+  .detail-body .label {
+    font-weight: 600;
+    color: #555;
+  }
+  
+  .detail-body .value {
+    color: #222;
+    text-align: right;
+    max-width: 60%;
+  }
+  
+  .subheader {
+    margin: 2rem 0 1rem;
+    color: #1976d2;
+    font-size: 1.25rem;
+  }
+  
+  .points-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .point-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.75rem 0;
+    border-top: 1px solid #f0f0f0;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  .point-item:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .point-item:hover .point-info strong {
+    text-decoration: underline;
+  }
+  
+  .point-item:first-child {
+    border-top: none;
+  }
+  
+  .point-item i {
+    color: #1976d2;
+    font-size: 1.25rem;
+    margin-top: 0.2rem;
+  }
+  
+  .point-info strong {
+    color: #333;
+  }
+  
+  .point-info small {
+    color: #666;
+  }
+  

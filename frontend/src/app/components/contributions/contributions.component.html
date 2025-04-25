@@ -1,0 +1,15 @@
+<div class="contributions-container">
+    <h2>I tuoi contributi</h2>
+
+    <div class="cards-grid">
+    <div class="card" *ngFor="let content of contributions" (click)="goToDetail(content)">
+      <button class="delete-btn" (click)="confirmDelete($event, content)">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3>{{ content.name }}</h3>
+      <p>{{ content.description }}</p>
+      <button (click)="editContent($event, content)" class="edit-button">Modifica</button>
+      <span class="badge">{{ content.contentType }}</span>
+    </div>
+    </div>
+  </div>

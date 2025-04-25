@@ -1,0 +1,13 @@
+<div class="dialog-container">
+    <h2>Aggiungi ad un Itinerario</h2>
+
+    <p class="info-text">
+        Se selezioni un itinerario, verranno aggiunti solamente i punti di interesse in esso contenuti.
+      </p>
+
+    <div class="itinerary-list">
+      <div *ngFor="let itinerary of itineraries" class="itinerary-item" (click)="select(itinerary.id)">
+        {{ itinerary.name }}
+      </div>
+    </div>
+  </div>

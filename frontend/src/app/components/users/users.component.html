@@ -1,0 +1,24 @@
+<h2>Gestione Utenti</h2>
+<table class="user-table">
+  <thead>
+    <tr><th>ID</th><th>Username</th><th>Ruolo</th><th>Modifica</th></tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users">
+      <td>{{ user.id }}</td>
+      <td>{{ user.username }}</td>
+      <td>
+        <select [(ngModel)]="user.role" class="role-select">
+          <option value="TOURIST">TOURIST</option>
+          <option value="CONTRIBUTOR">CONTRIBUTOR</option>
+          <option value="CURATOR">CURATOR</option>
+          <option value="ANIMATOR">ANIMATOR</option>
+          <option value="PLATFORM_MANAGER">PLATFORM_MANAGER</option>
+        </select>
+      </td>
+      <td>
+        <button (click)="updateRole(user.id, user.role)">Salva</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

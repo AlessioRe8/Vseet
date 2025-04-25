@@ -1,0 +1,58 @@
+<div class="contact-container">
+    <h1>Contatti</h1>
+  
+    <div class="cards-grid">
+  
+      <!-- Scheda Assistenza -->
+      <div class="contact-card">
+        <h2>Ottieni Assistenza</h2>
+        <p>Hai bisogno di aiuto? Il nostro team è a tua disposizione per supportarti tramite il numero verde attivo negli orari indicati.
+        </p>
+        <p style="font-weight: bold;">Lun-Ven: 9:00-18:00</p>
+        <button routerLink="/**">Contatta il Supporto</button>
+      </div>
+  
+      <!-- Scheda Feedback -->
+      <div class="contact-card">
+        <h2>Lascia un feedback</h2>
+        <form (ngSubmit)="inviaFeedback()" #feedbackForm="ngForm" class="feedback-form">
+          <div>
+            <label for="email">Email:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              [(ngModel)]="feedback.email"
+              required
+            />
+          </div>
+          <div>
+            <label for="message">Messaggio:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              [(ngModel)]="feedback.message"
+              required
+            ></textarea>
+          </div>
+          <button type="submit" [disabled]="!feedbackForm.form.valid">Invia feedback</button>
+        </form>
+      </div>
+  
+      <!-- Scheda Contatti -->
+      <div class="contact-card">
+        <h2>Contattaci</h2>
+        <p>
+            <i class="fas fa-envelope"></i>
+            <strong> Email: </strong> <a href="mailto:alessio.re@studenti.unicam.it">alessio.re&#64;studenti.unicam.it</a></p>
+        <p>
+            <i class="fab fa-facebook-square"></i>
+            <strong> Facebook: </strong> <a href="https://www.facebook.com/profile.php?id=100005061619490" target="_blank">Alessio Re</a></p>
+        <p>
+            <i class="fab fa-instagram"></i>
+            <strong> Instagram: </strong> <a href="https://www.instagram.com/alessio_re8/" target="_blank">&#64;alessio_re8</a></p>
+      </div>
+  
+    </div>
+  </div>

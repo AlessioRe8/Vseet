@@ -1,0 +1,82 @@
+<form (ngSubmit)="onSubmit()" #contentForm="ngForm" class="form-container">
+  <div class="form-group">
+    <label for="type">Tipo di contenuto:</label>
+    <select id="type" name="type" [(ngModel)]="content.type" (change)="onContentTypeChange($event)" required>
+      <option value="" disabled selected> Seleziona contenuto </option>
+      <option value="POI">POI</option>
+      <option value="Itinerary">Itinerario</option>
+    </select>
+    <div *ngIf="contentForm.submitted && !content.type" class="validation-error">
+      Seleziona il tipo di contenuto
+    </div>
+  </div>
+
+    <div class="form-group">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" [(ngModel)]="content.name" required />
+      <div *ngIf="contentForm.submitted && !content.name" class="validation-error">
+        Inserisci un nome
+      </div>
+    </div>
+  
+    <div class="form-group">
+      <label for="description">Descrizione:</label>
+      <textarea id="description" name="description" [(ngModel)]="content.description" required></textarea>
+      <div *ngIf="contentForm.submitted && !content.description" class="validation-error">
+        Inserisci una descrizione
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="category">Categoria:</label>
+      <select id="category" name="category" [(ngModel)]="content.category" required>
+        <option value="" disabled selected> Seleziona categoria </option>
+        <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+      </select>
+      <div *ngIf="contentForm.submitted && !content.category" class="validation-error">
+        Seleziona la categoria
+      </div>
+    </div>
+  
+    <!-- Campi visibili solo se POI -->
+    <div *ngIf="content.type === 'POI'">
+      <div class="form-group">
+        <label for="poiType">Tipo di POI:</label>
+        <select id="poiType" name="poiType" [(ngModel)]="poiType" required>
+          <option value="Concrete">Concrete</option>
+          <option value="Logic">Logic</option>
+        </select>
+        <div *ngIf="contentForm.submitted && content.type === 'POI' && !poiType" class="validation-error">
+          Seleziona il tipo di POI
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="latitude">Latitudine</label>
+        <input
+          id="latitude"
+          type="number"
+          [(ngModel)]="content.position.latitude"
+          name="latitude"
+          step="any"
+          required />
+      </div>
+    
+      <div class="form-group">
+        <label for="longitude">Longitudine</label>
+        <input
+          id="longitude"
+          type="number"
+          [(ngModel)]="content.position.longitude"
+          name="longitude"
+          step="any"
+          required />
+      </div>
+    </div>
+  
+    <div *ngIf="contentForm.submitted && !isFormValid()" class="validation-error global-error">
+      Compila tutti i campi!
+    </div>
+
+    <button type="submit" class="submit-btn">Crea Contenuto</button>
+  </form>

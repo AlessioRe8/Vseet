@@ -1,0 +1,132 @@
+.content-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.content-card {
+  flex: 1 1 calc(33% - 15px);
+  box-sizing: border-box;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+}
+
+.content-card:hover {
+  transform: scale(1.02);
+}
+
+/* Media query per schermi più piccoli */
+@media (max-width: 768px) {
+  .content-card {
+    flex: 1 1 calc(50% - 15px);
+  }
+}
+
+@media (max-width: 480px) {
+  .content-card {
+    flex: 1 1 100%;
+  }
+}
+.add-btn {
+  background: none;
+  border: none;
+  color: #007bff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.add-btn:hover {
+  color: #0056b3;
+}
+
+.add-btn i {
+  pointer-events: none;
+} 
+
+  
+.badge {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    background-color: #1976d2;
+    color: white;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+.verify-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 6px 12px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.verify-btn:hover {
+  background-color: #388e3c;
+}
+
+i.fas.fa-check-circle {
+  color: green;
+  font-size: 1.5em;
+}
+
+.create-content-btn {
+  position: fixed;
+  top: 10px;
+  right: 700px; 
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 30px;
+  font-size: 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+@media (max-width: 1200px) {
+  .create-content-btn {
+    right: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .create-content-btn {
+    right: 100px;
+    top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+.create-content-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05); 
+}
+
+.create-content-btn:active {
+  background-color: #388E3C;
+  transform: scale(1); 
+}

@@ -1,0 +1,34 @@
+<button title="Crea un contenuto" class="create-content-btn" (click)="onCreateContent()">
+  Crea Contenuto
+</button>
+
+<div class="content-container">
+<div class="content-card" *ngFor="let content of contents" (click)="goToDetail(content)">
+  <div class="card-header">
+    <h3>{{ content.name }}</h3>
+    <button title="Aggiungi ad un itinerario"
+      *ngIf="canAddToItinerary()"
+      class="add-btn"
+      (click)="openItinerarySelector($event, content)">
+      <i class="fas fa-plus"></i>
+    </button>
+  </div>
+  <div class="card-body">
+    <p>{{ content.description }}</p>
+    <div *ngIf="content.verified; else notVerified">
+      <i class="fas fa-check-circle"></i> Verificato
+    </div>
+
+    <ng-template #notVerified>
+      <button *ngIf="canVerifyContent()" title="Verifica contenuto" (click)="verifyContent($event, content.id)" class="verify-btn">Verifica</button>
+    </ng-template>
+    <span class="badge">{{ content.contentType }}</span>
+  </div>
+  
+</div>
+
+</div>
+
+  
+
+  

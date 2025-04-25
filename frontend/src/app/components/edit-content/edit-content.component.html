@@ -1,0 +1,60 @@
+<div class="edit-container">
+  <h2>Modifica Contenuto</h2>
+  <form [formGroup]="contentForm" (ngSubmit)="salvaModifiche()">
+    <label>Nome</label>
+    <input type="text" formControlName="name" required>
+  
+    <label>Descrizione</label>
+    <textarea formControlName="description" required></textarea>
+  
+    <label>Categoria</label>
+    <select formControlName="contentCategory" required>
+      <option value="" disabled>Seleziona una categoria</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+  
+    <div *ngIf="isPoi" formGroupName="position">
+      <label>Latitudine</label>
+      <input type="number" formControlName="latitude" step="any" />
+    
+      <label>Longitudine</label>
+      <input type="number" formControlName="longitude" step="any" />
+    </div>
+  
+    <div class="actions">
+      <button type="submit">Salva modifiche</button>
+      <button type="button" (click)="annulla()">Annulla</button>
+    </div>
+  </form>
+</div>
+<!-- <div class="edit-container">
+  <h2>Modifica Contenuto</h2>
+  <form (ngSubmit)="salvaModifiche()" *ngIf="content">
+
+    <label>Nome</label>
+    <input type="text" [(ngModel)]="content.name" name="name" required>
+
+    <label>Descrizione</label>
+    <textarea [(ngModel)]="content.description" name="description" required></textarea>
+
+    <label>Categoria</label>
+    <select [(ngModel)]="content.contentCategory" name="category" required>
+      <option value="" disabled>Seleziona una categoria</option>
+      <option *ngFor="let cat of categories" [value]="cat">{{ cat }}</option>
+    </select>
+
+    <div *ngIf="isPoi">
+      <label>Latitudine</label>
+      <input type="number" [(ngModel)]="content.position.latitude" name="latitude" step="any">
+
+      <label>Longitudine</label>
+      <input type="number" [(ngModel)]="content.position.longitude" name="longitude" step="any">
+    </div>
+
+    <div class="actions">
+      <button type="submit">Salva modifiche</button>
+      <button type="button" (click)="annulla()">Annulla</button>
+    </div>
+  </form>
+</div>
+ -->

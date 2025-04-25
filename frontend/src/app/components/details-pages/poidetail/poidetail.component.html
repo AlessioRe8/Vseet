@@ -1,0 +1,25 @@
+
+  <div class="detail-card" *ngIf="poi">
+    <div class="detail-header">
+      <h2>{{ poi.name }}</h2>
+      <i *ngIf="poi.verified" class="fas fa-check-circle badge-verified" title="Verificato"></i>
+    </div>
+  
+    <div class="detail-body">
+      <div class="detail-row">
+        <span class="label">Descrizione</span>
+        <span class="value">{{ poi.description }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Categoria</span>
+        <span class="value">{{ poi.contentCategory }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Posizione</span>
+        <span class="value">
+          <i class="fas fa-map-marker-alt"></i>
+          Lat {{ poi.position.latitude }}, Lng {{ poi.position.longitude }}
+        </span>
+      </div>
+    </div>
+  </div>
