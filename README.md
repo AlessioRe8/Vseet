@@ -29,12 +29,21 @@ Data security in the frontend is granted by Java model classes contained in the 
 <b>The application loads 4 basic users to log in (all with password: <i>password</i>), to try the different
 scenarios and permissions the system puts you in:</b>
 
-alessio.re@example.it -> Platform Manager</br>
+alessio.re@example.it -> Platform Manager (Suggested for more interactions)</br>
 andrea.bianchi@example.it -> Animator</br>
 mario.rossi@example.it -> Contributor</br>
 anna.verdi@example.it -> Tourist</br>
 
 Or you can create your own profile, via the "Sign up" page with your own email and password.
+
+## PWA Implementation
+This application is implemented also as a <b>Progressive Web App</b>. To run the PWA, navigate to [frontend](frontend) folder
+and run in a command prompt (bash) the code:</br>
+<code>$npm run build:pwa</br>
+$npm run serve:pwa
+</code></br>
+
+This commands will run the PWA. To access it navigate to <u>http://localhost:8081</u> and then try all the features of the application from your desktop!
 
 
 

@@ -2,8 +2,18 @@
   Crea Contenuto
 </button>
 
+<div class="search-bar-container">
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    (input)="filterContents()"
+    placeholder="Cerca contenuti per nome..."
+    class="search-input"
+  />
+</div>
+
 <div class="content-container">
-<div class="content-card" *ngFor="let content of contents" (click)="goToDetail(content)">
+<div class="content-card" *ngFor="let content of filteredContents" (click)="goToDetail(content)">
   <div class="card-header">
     <h3>{{ content.name }}</h3>
     <button title="Aggiungi ad un itinerario"
@@ -25,6 +35,10 @@
     <span class="badge">{{ content.contentType }}</span>
   </div>
   
+</div>
+
+<div *ngIf="filteredContents.length === 0 && searchTerm">
+  <p>Nessun contenuto trovato.</p>
 </div>
 
 </div>

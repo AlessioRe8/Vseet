@@ -2,11 +2,12 @@ package it.unicam.ids.Vseet.Model.Entities;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Itinerary extends Content{
-    @ManyToMany/* (cascade = { CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE }) */
+    @ManyToMany
     @JoinTable(
     name = "content_points",
     joinColumns = @JoinColumn(name = "itinerary_id"),
@@ -18,6 +19,7 @@ public class Itinerary extends Content{
 
     public Itinerary(String name, String description, User creator, ContentCategory category) {
         super(name, description, creator, category);
+        this.points = new ArrayList<>();
     }
 
     protected Itinerary() {

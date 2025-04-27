@@ -22,12 +22,17 @@ export class HomeComponent {
     private toastr: CustomToastrService) { }
   contents: any[] = [];
   userRole: string | null = null;
+  filteredContents: any[] = [];
+  searchTerm: string = '';
 
 
 
   ngOnInit(): void {
     this.contentService.getAllContents().subscribe({
-      next: data => this.contents = data,
+      next: data => {
+        this.contents = data,
+        this.filteredContents = [...this.contents];
+    },
       error: err => console.error('Errore nel caricamento dei contenuti', err)
     });
     if (this.authService.isAuthenticated()) { 
@@ -50,6 +55,13 @@ export class HomeComponent {
   } else {
     this.router.navigate(['/poi', content.id]);
   }
+  }
+
+   filterContents(): void {
+    const term = this.searchTerm.toLowerCase();
+    this.filteredContents = this.contents.filter(content =>
+      content.name.toLowerCase().includes(term)
+    );
   }
 
   onCreateContent(): void {

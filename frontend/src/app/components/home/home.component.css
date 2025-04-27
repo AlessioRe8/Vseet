@@ -106,6 +106,19 @@ i.fas.fa-check-circle {
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+.search-bar-container {
+  margin: 20px;
+  text-align: center;
+}
+
+.search-input {
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
 @media (max-width: 1200px) {
   .create-content-btn {
     right: 400px;
